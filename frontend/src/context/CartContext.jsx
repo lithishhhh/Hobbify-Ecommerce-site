@@ -52,11 +52,15 @@ export const CartProvider = ({ children }) => {
     setCartItems(data.items || []);
   };
 
+  const clearCart = () => {
+    setCartItems([]);
+  };
+
   const cartCount = cartItems.reduce((total, item) => total + (item.quantity || 1), 0);
   const subtotal = cartItems.reduce((total, item) => total + Number(item.product?.price || 0) * Number(item.quantity || 1), 0);
 
   const value = useMemo(
-    () => ({ cartItems, cartCount, subtotal, loading, addToCart, removeItem, updateQuantity, refreshCart }),
+    () => ({ cartItems, cartCount, subtotal, loading, addToCart, removeItem, updateQuantity, refreshCart, clearCart }),
     [cartItems, cartCount, subtotal, loading]
   );
 

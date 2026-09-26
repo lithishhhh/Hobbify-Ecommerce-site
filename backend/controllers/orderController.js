@@ -1,4 +1,5 @@
 const Order = require('../models/Order');
+const Cart = require('../models/Cart');
 
 const createOrder = async (req, res) => {
   try {
@@ -14,6 +15,11 @@ const createOrder = async (req, res) => {
       totalAmount,
       status: 'Processing',
     });
+
+    await Cart.updateOne(
+      { user: req.user._id },
+      { $set: { items: [] } }
+    );
 
     res.status(201).json(order);
   } catch (error) {

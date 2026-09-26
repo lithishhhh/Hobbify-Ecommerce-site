@@ -10,7 +10,7 @@ import { createPaymentOrder, verifyPayment } from '../services/paymentService';
 const Cart = () => {
   const navigate = useNavigate();
   const { user, token } = useAuth();
-  const { cartItems, subtotal, removeItem, updateQuantity } = useCart();
+  const { cartItems, subtotal, removeItem, updateQuantity, clearCart } = useCart();
   const [paymentError, setPaymentError] = useState('');
 
   const handleCheckout = async () => {
@@ -57,6 +57,7 @@ const Cart = () => {
         try {
           await verifyPayment(token, response);
           const order = await createOrder(token, payload);
+          clearCart();
           navigate('/account', {
             state: {
               orderConfirmation: {

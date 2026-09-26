@@ -64,7 +64,7 @@ const Account = () => {
                   <div>
                     <strong>Order #{order._id.slice(-6)}</strong>
                   </div>
-                  <div>{order.status}</div>
+                  <div>{['Pending', 'Processing'].includes(order.status) ? 'Order placed' : order.status}</div>
                   <div>₹ {Number(order.totalAmount).toLocaleString('en-IN')}</div>
                 </div>
               ))}
