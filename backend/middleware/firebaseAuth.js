@@ -18,7 +18,7 @@ const protectWithFirebase = async (req, res, next) => {
         name: decoded.name || decoded.email?.split('@')[0] || 'Hobbify User',
         email: decoded.email,
       },
-      { new: true, upsert: true, setDefaultsOnInsert: true }
+      { returnDocument: 'after', upsert: true, setDefaultsOnInsert: true }
     );
 
     req.user = user;

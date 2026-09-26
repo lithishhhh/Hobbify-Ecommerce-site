@@ -38,7 +38,7 @@ const createHobby = async (req, res) => {
 const updateHobby = async (req, res) => {
   try {
     const hobby = await Hobby.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
+      returnDocument: 'after',
       runValidators: true,
     });
 
