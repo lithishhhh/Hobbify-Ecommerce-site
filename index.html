@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hobbify</title>
+    <meta
+      name="description"
+      content="Hobbify — premium marketplace for hobbies and hobby products."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand-wrap">
+          <div class="brand-mark" aria-label="Hobbify logo">
+            <span class="brand-mark-inner"></span>
+          </div>
+          <div class="brand-copy">
+            <div class="brand-name">Hobbify</div>
+            <div class="brand-tag">Find your hobby. Build your passion.</div>
+          </div>
+        </div>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#" class="active">Home</a>
+          <a href="#">Shop</a>
+          <a href="#">Hobbies</a>
+          <a href="#">About</a>
+          <a href="#">Support</a>
+        </nav>
+
+        <div class="nav-tools">
+          <div class="search-pill">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M10.5 3a7.5 7.5 0 015.94 12.56l4.56 4.57 1.41-1.42-4.57-4.56A7.5 7.5 0 1110.5 3zm0 2a5.5 5.5 0 100 11 5.5 5.5 0 000-11z"/>
+            </svg>
+            <span>Search for products, hobbies...</span>
+          </div>
+          <button class="icon-btn" aria-label="Account">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 12a4 4 0 100-8 4 4 0 000 8zm-7 8a7 7 0 0114 0H5z"/>
+            </svg>
+          </button>
+          <button class="icon-btn" aria-label="Wishlist">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5A4.5 4.5 0 016.5 4c1.74 0 3.41.81 4.5 2.09A6.12 6.12 0 0115.5 4 4.5 4.5 0 0120 8.5c0 3.78-3.4 6.86-8.55 11.53L12 21.35z"/>
+            </svg>
+          </button>
+          <button class="cart-btn" aria-label="Cart">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 18a2 2 0 110 4 2 2 0 010-4zm10 0a2 2 0 110 4 2 2 0 010-4zM6.2 6h14.04l-1.38 7.36A2 2 0 0116.9 15H9.23a2 2 0 01-1.96-1.58L5.2 3H2V1h4.1l.66 3.1H20v2H6.2zm2.4 8h8.2l.88-4.8H8.5l.1 4.8z"/>
+            </svg>
+            <span class="cart-count">0</span>
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero-section">
+          <div class="hero-content">
+            <span class="eyebrow">MORE THAN JUST A HOBBY</span>
+            <h1>Hobbies Make Life Richer</h1>
+            <p>
+              They reduce stress, spark creativity, build new skills and bring people
+              together. Discover products that help you do what you love.
+            </p>
+            <button class="primary-btn">Explore Hobbies <span>→</span></button>
+          </div>
+
+          <div class="hero-visual" aria-hidden="true">
+            <div class="floating-tag top-right">Your next favorite thing is here...</div>
+            <div class="mug-card">
+              <div class="mug-icon">☕</div>
+              <div class="mug-text">GOOD THINGS TAKE TIME</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="category-section">
+          <div class="section-label">EXPLORE YOUR PASSION</div>
+          <h2>What’s Your Hobby?</h2>
+          <p>
+            Choose what you love, and we’ll show you the best products for your
+            journey.
+          </p>
+
+          <div class="hobby-grid" id="hobbyGrid"></div>
+        </section>
+
+        <section class="featured-section">
+          <div class="featured-header">
+            <h3>Popular in <span id="featuredHobby">Music</span></h3>
+            <button class="view-all">View All <span>→</span></button>
+          </div>
+
+          <div class="product-grid" id="productGrid"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
